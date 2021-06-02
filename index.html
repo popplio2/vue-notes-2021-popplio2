@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Vue JS Tutorials</title>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>{{ greet("night") }}</h1>
+        <a v-bind:href="website">Get Pokemon Clothes</a>
+        <input type="text" v-bind:value="job">
+        <!-- <p>Name: {{ name }}</p>
+        <p>Job: {{ job }}</p> -->
+        <p v-html="websiteTag"></p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
