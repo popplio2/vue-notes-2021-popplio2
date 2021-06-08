@@ -9,17 +9,15 @@
 </head>
 <body>
     <div id="vue-app">
-            <h1>Dynamic CSS</h1>
-            <h2>Example 1</h2>
-            <div v-on:click="available = !available" v-bind:class="{available: available}">
-                <span>Eren Jaegaaaaa</span>
-            </div>
-            <h2>Example 2</h2>
-            <div v-bind:class="compClasses">
-                <button v-on:click="available = !available">Toggle "available"</button>
-                <button v-on:click="nearby = !nearby">Toggle "nearby"</button>
-                <span>Ereh!</span>
-            </div>
+        <h1>Conditionals</h1>
+          <button v-on:click="error = !error">Toggle error</button>  
+          <button v-on:click="success = !success">Toggle success</button> 
+          <!-- When code with v-if is hidden, it is commented out completely -->
+          <p v-if="error">An ErRoR oCcUrReD..</p>
+          <p v-else-if="success">GrEaT sUcCeSs! VeRy NiIcE..</p>
+          <!-- When code with v-show is hidden, it only gains the style display:none -->
+          <p v-show="error">Oh noo</p>
+          <p v-show="success">Oh yeeaas</p>
     </div>
     <script src="app.js"></script>
 </body>
