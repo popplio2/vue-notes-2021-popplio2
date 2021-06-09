@@ -1,8 +1,13 @@
 new Vue({
     el: '#vue-app',
     data: {
-        error: false,
-        success: false,
+        name: 'Daniel',
+        characters: ['Pikachu', 'Bulbasaur', 'Squirtle', 'Charmander'],
+        trainers: [
+            {name: 'Ash', age: 10},
+            {name: 'Brock', age: 16},
+            {name: 'Misty', age: 13},
+        ],
     },
     methods: {
     },

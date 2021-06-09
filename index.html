@@ -9,15 +9,24 @@
 </head>
 <body>
     <div id="vue-app">
-        <h1>Conditionals</h1>
-          <button v-on:click="error = !error">Toggle error</button>  
-          <button v-on:click="success = !success">Toggle success</button> 
-          <!-- When code with v-if is hidden, it is commented out completely -->
-          <p v-if="error">An ErRoR oCcUrReD..</p>
-          <p v-else-if="success">GrEaT sUcCeSs! VeRy NiIcE..</p>
-          <!-- When code with v-show is hidden, it only gains the style display:none -->
-          <p v-show="error">Oh noo</p>
-          <p v-show="success">Oh yeeaas</p>
+        <h1>Looping through arrays</h1>
+        <ul>
+            <li v-for='(character, index) in characters'>{{ index + 1 }}. {{ character }}</li>
+        </ul>
+        <ul>
+            <li v-for='(trainer, index) in trainers'>{{ index + 1 }}. {{ trainer.name }}, {{ trainer.age }}</li>
+        </ul>
+
+        <template v-for='(trainer, index) in trainers'>
+            <h3>{{ index }}. {{ trainer.name }}</h3>
+            <h4>{{ trainer.age }}</h4>
+        </template>
+
+        <template v-for='trainer in trainers'>
+            <div v-for='(val, key) in trainer'>
+                <p>{{ key }} - {{ val }}</p>
+            </div>
+        </template>
     </div>
     <script src="app.js"></script>
 </body>
