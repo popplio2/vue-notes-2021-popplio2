@@ -8,15 +8,14 @@
     <title>Vue JS Tutorials</title>
 </head>
 <body>
-    <h1>Components</h1>
-    <div id="vue-app-one">
-        <h2>Vue app one</h2>
-        <greeting></greeting>
+    <h1>Refs</h1>
+    <div id="vue-app">
+       <input type="text" ref="input">
+       <button v-on:click="readRefs">Submit</button>
+       <p>Your fav food: {{ output }}</p>
+       <div ref="test">heyyy</div>
     </div>
-    <div id="vue-app-two">
-       <h2>Vue app two</h2>
-       <greeting></greeting>
-    </div>
+   
     <script src="app.js"></script>
 </body>
 </html>
