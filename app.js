@@ -4,8 +4,9 @@ new Vue ({
         output: 'Your fav food'
     },
     methods: {
-        changeName: function () {
-            this.name = 'Mario';
-        }
+        readRefs: function () {
+            this.output = this.$refs.input.value;
+            console.log(this.$refs.test.innerText);
+        },
     }
 });
