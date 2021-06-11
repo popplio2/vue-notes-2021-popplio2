@@ -1,14 +1,33 @@
-new Vue ({
-    el: '#vue-app',
+const one = new Vue ({
+    el: '#vue-app-one',
     data: {
-        name: 'Daniel',
-        job: 'Pokemon Master',
-        website: 'http://pokemoncenter.com',
-        websiteTag: '<a href="http://pokemoncenter.com">Get awesome Pokemon clothes</a>'
+        title: 'Vue App 1',
     },
     methods: {
-        greet: function (time) {
-            return "Good " + time + ", " + this.name;
+
+    },
+    computed: {
+        greet: function () {
+            return 'Hello from app one >:)';
         }
-    }
+    },
 });
+
+const two = new Vue ({
+    el: '#vue-app-two',
+    data: {
+        title: 'Vue App 2',
+    },
+    methods: {
+        changeTitle: function() {
+            one.title = 'Title changed greaat successs yeas';
+        }
+    },
+    computed: {
+        greet: function () {
+            return 'Give up on your dreams and die --App 2 :)';
+        },
+    },
+});
+
+two.title = "Aw yea babey we changed it from outsideee";
