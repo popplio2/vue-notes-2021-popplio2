@@ -21,7 +21,7 @@ export default {
     padding: 6px;
     }
     p {
-    color: #lightgreen;
+    color: lightgreen;
     text-align: center;
     }
 </style>
