@@ -19,7 +19,11 @@ export default {
   },
   methods: {
     changeTitle: function() {
-      this.title = "Vue Wizards"
+    //THIS CHANGES THE TITLE LOCALLY
+    //this.title = "Vue Wizards"
+    
+    //THIS CHANGES THE TITLE FROM THE ROOT
+    this.$emit('changeTitle', 'Vue Wizards')
     }
   }
 }
