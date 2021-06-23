@@ -6,21 +6,26 @@
     <h3 v-show="ninja.show">{{ ninja.specialty}}</h3>
     </li>
   </ul>
+  <button v-on:click="deleteNinja">Delete ninja</button>
 </div>
 </template>
 
 <script>
 export default {
+  props: {
+    ninjas: {
+    type: Array,
+    required: true,
+    }
+  },
   data () {
     return {
-     ninjas: [
-     {name: 'Daniel', specialty: 'Javascript', show: false},
-     {name: 'Charley', specialty: 'Creativity', show: false}, 
-     {name: 'Alston', specialty: 'Design', show: false}, 
-     {name: 'Ethan', specialty: 'CSS', show: false},
-     {name: 'Melvin', specialty: 'Not design o.O', show: false}, 
-     {name: 'Edis', specialty: 'Back-end', show: false}
-     ]
+    
+    }
+  },
+  methods: {
+    deleteNinja: function() {
+      this.ninjas.pop();
     }
   },
 }

@@ -1,8 +1,10 @@
 <template>
   <div>
-    <app-header></app-header>
-        <ninjas></ninjas>
-    <app-footer></app-footer>
+    <app-header v-bind:title="title"></app-header>
+        <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
+          <hr>
+        <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
+    <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
 
@@ -15,11 +17,19 @@ export default {
   components: {
     'app-header': Header,
     'app-footer': Footer,
-    'ninjas': Ninjas
+    'app-ninjas': Ninjas,
   },
   data() {
     return {
-
+      ninjas: [
+     {name: 'Daniel', specialty: 'Javascript', show: false},
+     {name: 'Charley', specialty: 'Creativity', show: false}, 
+     {name: 'Alston', specialty: 'Design', show: false}, 
+     {name: 'Ethan', specialty: 'CSS', show: false},
+     {name: 'Melvin', specialty: 'Not design o.O', show: false}, 
+     {name: 'Edis', specialty: 'Back-end', show: false}
+     ],
+     title: "Vue Ninjas",
     }
   }
 }
