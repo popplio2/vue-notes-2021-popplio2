@@ -1,45 +1,42 @@
 <template>
   <div>
-    <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-header>
-        <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
-          <hr>
-        <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
-    <app-footer v-bind:title="title"></app-footer>
+   <form-helper>
+    <div slot="form-header">
+      <h3>This is the title</h3>
+      <p>Info</p>
+    </div>
+    <div slot="form-fields">
+      <input type="text" placeholder="name" required>
+      <input type="password" placeholder="password" required>
+    </div>
+    <div slot="form-controls">
+      <button v-on:click="handleSubmit">Submit</button>
+    </div>
+   </form-helper>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import Ninjas from './components/Ninjas.vue'
+import formHelper from './components/formHelper.vue'
 
 export default {
   components: {
-    'app-header': Header,
-    'app-footer': Footer,
-    'app-ninjas': Ninjas,
+    'form-helper': formHelper,
   },
   data() {
     return {
-      ninjas: [
-     {name: 'Daniel', specialty: 'Javascript', show: false},
-     {name: 'Charley', specialty: 'Creativity', show: false}, 
-     {name: 'Alston', specialty: 'Design', show: false}, 
-     {name: 'Ethan', specialty: 'CSS', show: false},
-     {name: 'Melvin', specialty: 'Not design o.O', show: false}, 
-     {name: 'Edis', specialty: 'Back-end', show: false}
-     ],
-     title: "Vue Ninjas",
+      title: 'I am a dynamic slot title BABY',
     }
   },
   methods: {
-    updateTitle: function(updatedTitle) {
-      this.title = updatedTitle
-    }
-  }
+
+  },
 }
 </script>
 
 <style>
-
+body{
+    margin: 0;
+    font-family: 'Nunito SemiBold';
+}
 </style>
